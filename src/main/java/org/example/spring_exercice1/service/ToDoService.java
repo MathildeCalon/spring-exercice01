@@ -8,10 +8,12 @@ import java.util.List;
 
 @Service
 public class ToDoService {
-    List<ToDo> list = new ArrayList<ToDo>(){{
-        new ToDo("clean", "clean house", false);
-        new ToDo("tidy", "tidy house", true);
-    }};
+    List<ToDo> list = new ArrayList<ToDo>();
+
+    public ToDoService() {
+        list.add(new ToDo("clean", "clean house", false));
+        list.add(new ToDo("tidy", "tidy house", true));
+    }
 
     public List<ToDo> getToDoList(){
         return list;
@@ -19,8 +21,10 @@ public class ToDoService {
 
     public ToDo getToDo(String name){
         System.out.println("Service");
+        System.out.println(list);
         for(ToDo toDo1 : list){
             if(toDo1.getName().equals(name)){
+                System.out.println(toDo1);
                 return toDo1;
             }
         }

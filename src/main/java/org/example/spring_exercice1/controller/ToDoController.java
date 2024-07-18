@@ -23,8 +23,7 @@ public class ToDoController {
 
     @RequestMapping("/details")
     public String displayDetail(Model model){
-        ToDo todo = new ToDo("test", "test", false);
-        System.out.println(todo);
+        ToDo todo = toDoService.getToDo("tidy");
         model.addAttribute("todo", todo);
         return "todo";
     }
